@@ -1,0 +1,15 @@
+---
+title: "Cond probability"
+author: "Dr K"
+date: "February 26, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is chance that you pick 3 people at random and get exactly one unemployed. We assume an unemployment rate of .079
+
+
+
