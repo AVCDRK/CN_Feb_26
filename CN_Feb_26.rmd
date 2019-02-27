@@ -11,5 +11,36 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## What is chance that you pick 3 people at random and get exactly one unemployed. We assume an unemployment rate of .079
 
+Our approach will be to create a pseudo population with 10000 people in it. We will use numbers - 0 for employed and 1 for unemployed.  
 
+Put our numbers in something -- call it bucket
 
+```{r}
+unemp = rep(1,times=790)
+employ= rep(0,10000-790)
+peepl=c(unemp,employ)
+```
+
+Now we going to start picking out groups of 3 and see how often we get jus one unemployed.
+
+Plan is to make some code that goes in a loop.  
+
+```{r}
+results=numeric()
+for (i in 1:5000){
+  onsamp = sample(peepl,size=3,replace = T)
+  results[i]=sum(onsamp)
+}
+table(results)
+```
+
+How can we modify this to answer what is probability of 2 out of 8 ?  Compare with Mine's video on2 out of 8.
+
+```{r}
+results=numeric()
+for (i in 1:5000){
+  onsamp = sample(peepl,size=8,replace = T)
+  results[i]=sum(onsamp)
+}
+table(results)
+```
